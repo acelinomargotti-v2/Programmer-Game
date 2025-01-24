@@ -15,4 +15,13 @@ public class GoodCriatureBehavior : CreatureBehavior
     {
         
     }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerHealth>().Heal(50f);
+        }
+    }
 }

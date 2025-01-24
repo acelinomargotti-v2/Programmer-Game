@@ -71,7 +71,7 @@ public class CreatureBehavior : MonoBehaviour
     }
 
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {

@@ -15,4 +15,13 @@ public class BadCriatureBehavior : CreatureBehavior //using inheritance
     {
         
     }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerHealth>().TakeDamage(50f);
+        }
+    }
 }
