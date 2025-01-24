@@ -6,7 +6,8 @@ public class PlayerMoviment : MonoBehaviour
 {
     public float playerSpeed;
     public float playerRotationSpeed;
-    public int playerSpaceOnInvetary { get; set; } //Encapsulated variable to prevent the player from collecting more than two creatures.
+
+    public int playerSpaceOnInvetary;
     public Transform cameraTransform; // Main camera reference
 
     // Start is called before the first frame update
