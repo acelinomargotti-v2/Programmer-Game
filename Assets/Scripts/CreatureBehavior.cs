@@ -69,4 +69,13 @@ public class CreatureBehavior : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, moveRadius);
     }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerHealth>().TakeDamage(10f);
+        }
+    }
 }
