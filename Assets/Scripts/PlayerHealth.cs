@@ -4,20 +4,36 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [Header("Player Health Settings")]
-    public float maxHealth = 100f;
+    private float _maxHealth = 100f; // Real private field of the property.
     private float currentHealth;
+
+    // Property for maxHealth encapsulation.
+    public float MaxHealth
+    {
+        get { return _maxHealth; }
+        set
+        {
+            if (value > 0 && value < 101)
+            {
+                _maxHealth = value;
+                currentHealth = Mathf.Clamp(currentHealth, 0, _maxHealth);
+            }
+            else
+            {
+                Debug.LogError("O valor de MaxHealth deve ser maior que zero.");
+            }
+        }
+    }
 
     void Start()
     {
-        currentHealth = maxHealth;
+        currentHealth = MaxHealth; // Property instead of the field.
     }
-
 
     public void TakeDamage(float damageAmount)
     {
         currentHealth -= damageAmount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        currentHealth = Mathf.Clamp(currentHealth, 0, MaxHealth);
 
         Debug.Log($"Player tomou {damageAmount} de dano. Vida atual: {currentHealth}");
 
@@ -27,15 +43,13 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-
     public void Heal(float healAmount)
     {
         currentHealth += healAmount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        currentHealth = Mathf.Clamp(currentHealth, 0, MaxHealth);
 
         Debug.Log($"Player foi curado em {healAmount}. Vida atual: {currentHealth}");
     }
-
 
     private void Die()
     {
@@ -43,7 +57,7 @@ public class PlayerHealth : MonoBehaviour
         // Add death logic here (restart game, game over screen, etc.).
     }
 
-    // Method to return the player's current health (optional).
+    // Optional method to get the player's current health.
     public float GetCurrentHealth()
     {
         return currentHealth;
