@@ -4,35 +4,35 @@ using UnityEngine;
 
 public class ThirdPersonCamera : MonoBehaviour
 {
-    public Transform player;          // Referência ao transform do player
-    public Vector3 offset = new Vector3(0f, 5f, -10f); // Offset inicial da câmera
-    public float mouseSensitivity = 100f; // Sensibilidade do mouse
-    public float minY = -20f;         // Ângulo mínimo para o pitch
-    public float maxY = 60f;          // Ângulo máximo para o pitch
+    public Transform player;
+    public Vector3 offset = new Vector3(0f, 5f, -10f);
+    public float mouseSensitivity = 100f;
+    public float minY = -20f;
+    public float maxY = 60f;
 
-    private float currentYaw = 0f;    // Rotação horizontal (yaw)
-    private float currentPitch = 0f;  // Rotação vertical (pitch)
+    private float currentYaw = 0f;
+    private float currentPitch = 0f;
 
     void LateUpdate()
     {
-        // Captura a entrada do mouse
+        // Capture mouse input.
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        // Atualiza os ângulos de rotação
-        currentYaw += mouseX; // Rotação horizontal
-        currentPitch -= mouseY; // Rotação vertical
+        // Update the rotation angles.
+        currentYaw += mouseX; // Horizontal rotation.
+        currentPitch -= mouseY; // Vertical rotation.
 
-        // Limita a rotação vertical
+        // Limit the vertical rotation.
         currentPitch = Mathf.Clamp(currentPitch, minY, maxY);
 
-        // Calcula a posição desejada da câmera
+        // Calculate the desired camera position.
         Quaternion rotation = Quaternion.Euler(currentPitch, currentYaw, 0f);
         Vector3 desiredPosition = player.position + rotation * offset;
 
-        // Atualiza a posição e rotação da câmera
+        // Update the camera's position and rotation.
         transform.position = desiredPosition;
-        transform.LookAt(player.position + Vector3.up * 1.5f); // A câmera olha para o player
+        transform.LookAt(player.position + Vector3.up * 1.5f); // The camera looks at the player.
 
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         offset = offset * (1f - scroll);

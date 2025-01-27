@@ -2,26 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoodCriatureBehavior : CreatureBehavior
+public class GoodCreatureBehavior : CreatureBehavior // Inheritance.
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float healAmount = 50f;
 
-    // Update is called once per frame
-    void Update()
+    // Polymorphism.
+    // Overriding the interaction behavior.
+    protected override void InteractWithPlayer(PlayerHealth player)
     {
-        
-    }
-
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            other.GetComponent<PlayerHealth>().Heal(50f);
-        }
+        player.Heal(healAmount);
+        Debug.Log($"GoodCreature curou o jogador em {healAmount} de vida.");
     }
 }

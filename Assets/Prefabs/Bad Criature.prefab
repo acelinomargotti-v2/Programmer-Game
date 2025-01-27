@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2902549665195312987}
   - component: {fileID: 7831088434222918337}
   - component: {fileID: 3547262172466196165}
-  - component: {fileID: 5999199084525668227}
+  - component: {fileID: 4800318776769913877}
   m_Layer: 0
   m_Name: Horn
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5999199084525668227
+--- !u!136 &4800318776769913877
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,9 +104,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1.9999998
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0.00000035762787}
 --- !u!1 &2349028240896692077
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,8 +118,8 @@ GameObject:
   - component: {fileID: 1361519522721916746}
   - component: {fileID: 4111229148644314123}
   - component: {fileID: 6468301434113661607}
-  - component: {fileID: 689244862663801056}
   - component: {fileID: 8918330530833580064}
+  - component: {fileID: 376730796386052650}
   m_Layer: 0
   m_Name: Creature Body
   m_TagString: Untagged
@@ -196,7 +196,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &689244862663801056
+--- !u!114 &8918330530833580064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349028240896692077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047fc9cf627851441a557544e7af4cb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRadius: 5
+  moveSpeed: 2
+  waitTime: 2
+--- !u!135 &376730796386052650
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,23 +230,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8918330530833580064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2349028240896692077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 047fc9cf627851441a557544e7af4cb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveRadius: 5
-  moveSpeed: 2
-  waitTime: 2
+  m_Radius: 0.4999999
+  m_Center: {x: -0.000000059604645, y: 0, z: 0}
 --- !u!1 &4882910860078851246
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 3263687791674223880}
   - component: {fileID: 7437097147397105903}
   - component: {fileID: 4902969746287493541}
-  - component: {fileID: 2272722765234060766}
+  - component: {fileID: 4032758840807962292}
   m_Layer: 0
   m_Name: Criature Eye (1)
   m_TagString: Untagged
@@ -316,7 +316,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &2272722765234060766
+--- !u!135 &4032758840807962292
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -335,8 +335,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.49999997
+  m_Center: {x: -0.00000047683716, y: -0.00000014901161, z: 0}
 --- !u!1 &6118182809974009032
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 7965474805234965475}
   - component: {fileID: 8940127945541096729}
   - component: {fileID: 6796476293055115911}
-  - component: {fileID: 1350523860978758872}
+  - component: {fileID: 5590629989198528760}
   m_Layer: 0
   m_Name: Criature Eye (2)
   m_TagString: Untagged
@@ -421,7 +421,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1350523860978758872
+--- !u!135 &5590629989198528760
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -441,7 +441,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.00000008940697, z: 0}
 --- !u!1 &7672390471999794810
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +452,8 @@ GameObject:
   m_Component:
   - component: {fileID: 694391190310320917}
   - component: {fileID: -6170238529012099426}
+  - component: {fileID: 4993608968320474699}
+  - component: {fileID: 481812494589280982}
   m_Layer: 0
   m_Name: Bad Criature
   m_TagString: Untagged
@@ -490,6 +492,55 @@ MonoBehaviour:
   moveRadius: 5
   moveSpeed: 2
   waitTime: 2
+  damageAmount: 50
+--- !u!135 &4993608968320474699
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7672390471999794810}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.37238482
+  m_Center: {x: 0.0028201274, y: 0, z: 0}
+--- !u!54 &481812494589280982
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7672390471999794810}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1 &7869334786719735273
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +552,7 @@ GameObject:
   - component: {fileID: 2015790132571411915}
   - component: {fileID: 5740389212383910682}
   - component: {fileID: 8339896760397862427}
-  - component: {fileID: 4212952228747500964}
+  - component: {fileID: 6830930882500215561}
   m_Layer: 0
   m_Name: Horn (1)
   m_TagString: Untagged
@@ -574,7 +625,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &4212952228747500964
+--- !u!136 &6830930882500215561
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -593,7 +644,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.49999994
+  m_Height: 1.9999994
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.00000023841858, z: -0.0000009536743}

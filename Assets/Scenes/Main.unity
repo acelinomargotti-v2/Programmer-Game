@@ -744,9 +744,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52f23411e6176447b461ba94200b2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 3.31
-  playerRotationSpeed: 44.67
-  playerSpaceOnInvetary: 0
+  playerSpeed: 6.12
+  playerRotationSpeed: 77.6
+  verticalSpeed: 4.6
+  playerSpaceOnInvetary: 3
   cameraTransform: {fileID: 963194228}
 --- !u!65 &159510156
 BoxCollider:
@@ -767,8 +768,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.1609993, y: 1.1047122, z: 1.1413236}
+  m_Center: {x: 0.009520531, y: -0.009504437, z: 0.018887758}
 --- !u!54 &159510157
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -791,11 +792,11 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &159510159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6738,10 +6739,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1736953875496515467, guid: 33c712e6e72867142bef29fdf43ff111, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2488523733256642186, guid: 33c712e6e72867142bef29fdf43ff111, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.434638
@@ -6785,10 +6782,6 @@ PrefabInstance:
     - target: {fileID: 4113840938362288492, guid: 33c712e6e72867142bef29fdf43ff111, type: 3}
       propertyPath: m_Name
       value: Criature
-      objectReference: {fileID: 0}
-    - target: {fileID: 4113840938362288492, guid: 33c712e6e72867142bef29fdf43ff111, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -5,20 +5,19 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Player Health Settings")]
-    public float maxHealth = 100f; // Vida máxima do jogador
-    private float currentHealth;   // Vida atual do jogador
+    public float maxHealth = 100f;
+    private float currentHealth;
 
     void Start()
     {
-        // Define a vida atual como o valor máximo no início
         currentHealth = maxHealth;
     }
 
-    // Método para o jogador receber dano
+
     public void TakeDamage(float damageAmount)
     {
         currentHealth -= damageAmount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // Garante que a vida fique entre 0 e o máximo
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
         Debug.Log($"Player tomou {damageAmount} de dano. Vida atual: {currentHealth}");
 
@@ -28,23 +27,23 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    // Método para curar o jogador
+
     public void Heal(float healAmount)
     {
         currentHealth += healAmount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // Garante que a vida não ultrapasse o máximo
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
         Debug.Log($"Player foi curado em {healAmount}. Vida atual: {currentHealth}");
     }
 
-    // Método chamado quando a vida do jogador chega a 0
+
     private void Die()
     {
         Debug.Log("Player morreu!");
-        // Adicione lógica de morte aqui (reiniciar jogo, tela de game over, etc.)
+        // Add death logic here (restart game, game over screen, etc.).
     }
 
-    // Método para retornar a vida atual do jogador (opcional)
+    // Method to return the player's current health (optional).
     public float GetCurrentHealth()
     {
         return currentHealth;

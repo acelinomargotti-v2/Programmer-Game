@@ -2,26 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BadCriatureBehavior : CreatureBehavior //using inheritance
+public class BadCreatureBehavior : CreatureBehavior // Inheritance.
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float damageAmount = 50f;
 
-    // Update is called once per frame
-    void Update()
+    // Polymorphism.
+    // Overriding interaction behavior.
+    protected override void InteractWithPlayer(PlayerHealth player)
     {
-        
-    }
-
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            other.GetComponent<PlayerHealth>().TakeDamage(50f);
-        }
+        player.TakeDamage(damageAmount);
+        Debug.Log($"BadCreature causou {damageAmount} de dano ao jogador.");
     }
 }
